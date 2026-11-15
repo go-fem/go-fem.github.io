@@ -20,10 +20,8 @@
     <div>
       <h1 class="head">Finite elements, in pure Go.<br><span class="accent">Solved on a mesh, verified by a known answer.</span></h1>
       <p class="sub">go-fem is <b>planned</b> (wave 3 of the <a href="https://github.com/go-scikit/roadmap">go-scikit roadmap</a>): <b>finite elements and PDE solvers</b>, starting with Lagrange P1 and P2 elements, Poisson, heat and elasticity, validated by <b>manufactured solutions</b> and their observed convergence order. No repository holds code yet.</p>
-      <div class="cta">
-        <a class="btn btn-primary" href="https://go-fem.github.io/docs/">{{ partial "icons/book.html" . }}Read the plan →</a>
-        <a class="btn btn-ghost" href="https://github.com/go-scikit/roadmap/blob/main/PLAN.md">{{ partial "icons/github.html" . }}PLAN.md →</a>
-      </div>
+      {{/* [[params.cta]] in hugo.toml: the kit renders the row */}}
+      {{ partial "cta.html" . }}
       <div class="trust"><span><b>planned</b> (wave 3)</span><span><b>{{ len .Site.Params.packages }}</b> packages in the plan</span><span><b>CGO=0</b> pure Go</span></div>
     </div>
     <div class="term">
@@ -92,6 +90,6 @@ plan      github.com/go-scikit/roadmap</pre>
     </div>
   </div></section>
 
-  <footer><div class="wrap"><span>go-fem · <a href="https://github.com/go-fem">go-fem on GitHub</a> · BSD-3-Clause</span><span>planned · wave 3</span></div></footer>
+  <footer><div class="wrap"><span>go-fem · <a href="https://github.com/go-fem">go-fem on GitHub</a>{{ if not (partial "mantra-on.html" $) }} · BSD-3-Clause{{ end }}</span><span>planned · wave 3</span></div></footer>
 </body>
 </html>
